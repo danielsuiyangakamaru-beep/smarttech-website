@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Amani Cars | Professional Car Detailing & Vehicle Branding</title>
+    <meta name="description" content="Chris Amani Cars - Professional car detailing, vehicle branding, car wrapping, polishing, waxing & paint protection. Quality, creativity and perfection in every detail.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car-side"></i>
+                <span>Chris Amani <strong>Cars</strong></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#gallery" class="nav-link">Car Gallery</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#upload" class="nav-link">Upload Car</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary">Book Now</a>
+                <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">Premium Car Detailing & Vehicle Branding</span>
+                <h1>Quality, Creativity<br>and Perfection<br>in Every Detail.</h1>
+                <p>Transform your vehicle with expert car wrapping, paint protection, polishing, waxing, and professional vehicle branding services.</p>
+                <div class="hero-cta">
+                    <a href="#services" class="btn btn-primary btn-large">Explore Services</a>
+                    <a href="#gallery" class="btn btn-outline btn-large">View Gallery</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-car">
+                    <div class="car-glow"></div>
+                    <i class="fas fa-car-side hero-car-icon"></i>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><span class="stat-number">500+</span><span class="stat-label">Cars Detailed</span></div>
+                    <div class="stat"><span class="stat-number">100+</span><span class="stat-label">Vehicle Wraps</span></div>
+                    <div class="stat"><span class="stat-number">10</span><span class="stat-label">Years Experience</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services section-pad">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline">Our Expertise</span>
+                <h2>Professional Car Detailing<br>Services</h2>
+                <p>From interior care to exterior perfection, we bring your vehicle back to showroom condition.</p>
+            </div>
+            <div class="services-grid" id="servicesGrid"></div>
+        </div>
+    </section>
+    <section id="gallery" class="gallery section-pad bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline">Our Work</span>
+                <h2>Car Gallery & Showcase</h2>
+                <p>Browse our detailed vehicles and customer transformations.</p>
+            </div>
+            <div class="gallery-controls">
+                <input type="text" id="gallerySearch" placeholder="Search cars..." class="search-input">
+                <button onclick="filterGallery('all')" class="filter-btn active" data-filter="all">All</button>
+                <button onclick="filterGallery('detailing')" class="filter-btn" data-filter="detailing">Detailing</button>
+                <button onclick="filterGallery('wrapping')" class="filter-btn" data-filter="wrapping">Car Wrapping</button>
+                <button onclick="filterGallery('branding')" class="filter-btn" data-filter="branding">Vehicle Branding</button>
+                <button onclick="filterGallery('protection')" class="filter-btn" data-filter="protection">Paint Protection</button>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </section>
+    <section id="upload" class="upload section-pad">
+        <div class="container">
+            <div class="upload-card">
+                <div class="upload-content">
+                    <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h2>Upload Your Car</h2>
+                    <p>Submit your vehicle details for detailing, wrapping, or branding service. We'll review and get back to you with a custom quote.</p>
+                    <form id="uploadForm" class="upload-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Car Make &amp; Model <span class="required">*</span></label>
+                                <input type="text" name="carModel" placeholder="e.g. Toyota Camry 2020" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Service Type <span class="required">*</span></label>
+                                <select name="serviceType" required>
+                                    <option value="">Select a service</option>
+                                    <option value="detailing">Interior &amp; Exterior Detailing</option>
+                                    <option value="wrapping">Car Wrapping</option>
+                                    <option value="branding">Vehicle Branding / Graphics</option>
+                                    <option value="protection">Paint Protection</option>
+                                    <option value="polishing">Polishing &amp; Waxing</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Upload Car Photos <span class="required">*</span></label>
+                            <input type="file" name="carPhotos" accept="image/*" multiple required>
+                            <p class="form-hint">Upload up to 5 photos (JPG, PNG, max 5MB each)</p>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name <span class="required">*</span></label>
+                                <input type="text" name="customerName" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address <span class="required">*</span></label>
+                                <input type="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" placeholder="+1 234 567 8900">
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Notes / Special Requests</label>
+                            <textarea name="notes" rows="3" placeholder="Any specific details about your car or service needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Submit Car Details</button>
+                    </form>
+                    <div id="uploadSuccess" class="upload-success hidden">
+                        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Thank You!</h3>
+                        <p>Your car details have been submitted successfully. Our team will contact you shortly with pricing and available appointment slots.</p>
+                        <a href="#gallery" class="btn btn-outline">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="pricing" class="pricing section-pad">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tagline">Transparent Pricing</span>
+                <h2>Pricing Models</h2>
+                <p>Choose the package that fits your vehicle and budget.</p>
+            </div>
+            <div class="pricing-grid" id="pricingGrid"></div>
+        </div>
+    </section>
+    <section id="about" class="about section-pad bg-light">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tagline">Who We Are</span>
+                    <h2>About Chris Amani Cars</h2>
+                    <p>We are a professional branding and car detailing company dedicated to transforming vehicles and helping businesses stand out. We specialize in high-quality vehicle branding, graphic design, car wrapping, interior and exterior detailing, polishing, waxing, and paint protection.</p>
+                    <p>Our mission is to deliver exceptional quality, creativity, and customer satisfaction through reliable services and attention to detail. Whether you want to give your vehicle a fresh, luxurious look or promote your business through eye-catching branding, we bring your vision to life.</p>
+                    <div class="about-features">
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span>Certified Detailers</span></div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span>Premium Products Only</span></div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span>Mobile Service Available</span></div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i><span>100% Satisfaction Guarantee</span></div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-stats-card">
+                        <div class="stat-item"><span class="stat-num">10+</span><span class="stat-txt">Years</span></div>
+                        <div class="stat-item"><span class="stat-num">1000+</span><span class="stat-txt">Happy Clients</span></div>
+                        <div class="stat-item"><span class="stat-num">500+</span><span class="stat-txt">Vehicles Served</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact section-pad">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tagline">Get In Touch</span>
+                    <h2>Book Your Service</h2>
+                    <p>Ready to transform your vehicle? Contact us today for a free consultation and quote.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><h4>Location</h4><p>123 Detailing Street, Auto City, AC 12345</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div><h4>Phone</h4><p>+1 (555) 123-4567</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div><h4>Email</h4><p>info@chrisamanicars.com</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div><h4>Hours</h4><p>Mon - Sat: 8:00 AM - 6:00 PM</p></div>
+                        </div>
+                    </div>
+                    <div class="social-links"><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+                </div>
+                <div class="contact-form-wrap">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group"><label>Name <span class="required">*</span></label><input type="text" name="name" required></div>
+                            <div class="form-group"><label>Email <span class="required">*</span></label><input type="email" name="email" required></div>
+                        </div>
+                        <div class="form-group"><label>Service Interest</label><select name="service"><option value="">Select a service</option><option value="detailing">Detailing</option><option value="wrapping">Car Wrapping</option><option value="branding">Vehicle Branding</option><option value="protection">Paint Protection</option><option value="other">Other</option></select></div>
+                        <div class="form-group"><label>Message <span class="required">*</span></label><textarea name="message" rows="5" required></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                    <div id="contactSuccess" class="upload-success hidden">
+                        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out. We'll get back to you shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo"><i class="fas fa-car-side"></i><span>Chris Amani <strong>Cars</strong></span></div>
+                    <p>Quality, creativity and perfection in every detail.</p>
+                </div>
+                <div class="footer-links"><h4>Services</h4><a href="#services">Detailing</a><a href="#services">Car Wrapping</a><a href="#services">Vehicle Branding</a><a href="#services">Paint Protection</a><a href="#services">Polishing &amp; Waxing</a></div>
+                <div class="footer-links"><h4>Company</h4><a href="#about">About Us</a><a href="#gallery">Gallery</a><a href="#pricing">Pricing</a><a href="#upload">Upload Car</a><a href="#contact">Contact</a></div>
+                <div class="footer-newsletter"><h4>Subscribe</h4><p>Get detailing tips and special offers.</p><form class="newsletter-form"><input type="email" placeholder="Your email" required><button type="submit"><i class="fas fa-paper-plane"></i></button></form></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; <span id="year"></span> Chris Amani Cars. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
